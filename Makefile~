@@ -1,0 +1,11 @@
+all: .o prog 
+
+.o:
+	gcc -c -Wall -ansi -pedantic ./src/*.c -lm
+	mv *.o ./bin
+
+prog:
+	gcc -Wall -std=gnu99 -ansi -pedantic ./bin/*.o -o ./bin/prog -lm
+
+exec:
+	./bin/prog
